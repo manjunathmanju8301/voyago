@@ -9,6 +9,7 @@ import { loggerConfig, validateEnv } from './config/index.js';
 import { SanitizeMiddleware } from './common/index.js';
 import { PrismaModule } from './prisma/prisma.module.js';
 import { HealthModule } from './modules/health/health.module.js';
+import { HotelsModule } from './modules/hotels/hotels.module.js';
 
 @Module({
     imports: [
@@ -30,7 +31,7 @@ import { HealthModule } from './modules/health/health.module.js';
             }),
         }),
         PrismaModule, 
-        HealthModule, 
+        HealthModule, HotelsModule
     ],
     controllers: [],
     providers: [],

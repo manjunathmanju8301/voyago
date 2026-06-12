@@ -55,6 +55,13 @@ voyago/
 
 ---
 
+## API Routes
+
+Backend API routes are documented in detail in the [backend/routes.md](./backend/routes.md) file.
+This file is updated as new modules are added.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites

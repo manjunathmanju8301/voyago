@@ -25,6 +25,8 @@ export enum ApiRoutes {
     BOOKINGS = 'bookings',
     PAYMENTS = 'payments',
     HELPDESK = 'helpdesk',
+
+    HOTELS_SEARCH = '/search',
 }
 
 export enum ApiOperation {
@@ -98,7 +100,7 @@ export const UPDATE_ME_SUCCESS = 'Profile updated successfully';
 
 export const HOTELS_LIST_SUCCESS = 'Hotels list retrieved successfully';
 export const HOTELS_GET_SUCCESS = 'Hotel details retrieved successfully';
-export const HOTELS_SEARCH_SUCCESS = 'Hotels searched successfully';
+export const HOTELS_SEARCH_SUCCESS = 'Hotels retrieved successfully';
 export const HOTELS_AVAILABILITY_SUCCESS = 'Room availability checked successfully';
 
 export const BUSES_LIST_SUCCESS = 'Buses list retrieved successfully';
@@ -138,6 +140,7 @@ export const BAD_REQUEST = 'Bad request';
 export const INTERNAL_ERROR = 'Internal server error';
 
 export const SEAT_UNAVAILABLE = 'Requested seat or room is no longer available';
+export const HOTEL_NOT_FOUND = 'Hotel not found';
 export const BOOKING_NOT_FOUND = 'Booking not found';
 export const BOOKING_ALREADY_CANCELLED = 'This booking has already been cancelled';
 export const BOOKING_CANNOT_CANCEL = 'This booking cannot be cancelled in its current state';
