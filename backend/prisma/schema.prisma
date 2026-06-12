@@ -1,36 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRESQL_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
-model Booking {
-  id        String   @id @default(uuid())
-  userId    String
-  type      String
-  reference String   @unique
-  status    String   @default("pending")
-  amount    Decimal
-  currency  String   @default("INR")
-  metadata  Json?
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  name      String
+  role      String   @default("CUSTOMER")
+  isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  payment Payment?
 }
 
-model Payment {
-  id            String   @id @default(uuid())
-  bookingId     String   @unique
-  booking       Booking  @relation(fields: [bookingId], references: [id])
-  stripeId      String   @unique
-  amount        Decimal
-  currency      String   @default("INR")
-  status        String   @default("pending")
-  paymentMethod String?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-}

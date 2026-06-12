@@ -1,21 +1,28 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "target": "ES2023",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strict": true,
+    "module": "NodeNext",
+    "types": ["vitest/globals"],
+    "moduleResolution": "NodeNext",
+    "resolvePackageJsonExports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "src",
+    "isolatedModules": true,
     "declaration": true,
     "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
     "sourceMap": true,
-    "ignoreDeprecations": "6.0",
+    "outDir": "./dist",
+    "baseUrl": "./",
     "incremental": true,
-    "forceConsistentCasingInFileNames": true
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"]
+  "exclude": ["node_modules", "dist", "vitest.config.ts", "vitest.config.e2e.ts"]
 }
